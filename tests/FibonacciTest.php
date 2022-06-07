@@ -9,4 +9,10 @@ class FibonacciTest extends TestCase{
         $fibonacci = new Fibonacci();
         $this->assertEquals(1, $fibonacci->calcular(1));
     }
+    
+    public function testStaticWhitNumberTwoFibonacci()
+    {
+        $fibonacci = new Fibonacci();
+        $this->assertEquals(3, $fibonacci->calcular(2));
+    }
 }
