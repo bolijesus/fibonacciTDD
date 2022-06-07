@@ -14,8 +14,9 @@ class PruebasUnitarias(unittest.TestCase):
         fibonacci = Fibonacci()
         self.assertEqual([0,1], fibonacci.calcular(2))
     
-    
-
+    def test_NumberOfDigitsForFunctionFibonacci(self):
+        fibonacci = Fibonacci()
+        self.assertEqual([0,1,1,2,3,5,8,13], fibonacci.calcular(8))
         
 if __name__ == '__main__':
     unittest.main()
