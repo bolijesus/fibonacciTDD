@@ -34,4 +34,42 @@ class PrimoTest extends TestCase{
     {
         $this->assertEquals(false,$this->primo->esPrimo($numero));
     }
+
+    public function testSumaPrimoListaVacia()
+    {
+        $this->assertEquals(0, $this->primo->sumaPrimo([]));
+    }
+
+    public function testSumaPrimoLista1()
+    {
+        $this->assertEquals(10, $this->primo->sumaPrimo([1,2,3,4,5]));
+    }
+
+    public function testPrimoMasAlto()
+    {
+        $this->assertEquals(97, $this->primo->primoMayor(100));
+    }
+
+    public function testPrimoMasAlto1()
+    {
+        $this->assertEquals(997, $this->primo->primoMayor(1000));
+        $this->assertEquals(9973, $this->primo->primoMayor(10000));
+        $this->assertEquals(99991, $this->primo->primoMayor(100000));
+    }
+
+    public function testPrimoMayorNegativo()
+    {
+        $this->assertNull($this->primo->primoMayor(-100));
+    }
+
+    public function testPrimoMayorParaCero()
+    {
+        $this->assertNull($this->primo->primoMayor(0));
+    }
+
+    public function testPrimoMayorParaUno()
+    {
+        $this->assertNull($this->primo->primoMayor(1));
+    }
+
 }
